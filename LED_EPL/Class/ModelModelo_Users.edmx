@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EPLModel_All.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EPL.dbo.CAIXOTE_EPL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CAIXOTE_EPL">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="id_pallet" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id_pallet" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="sn" Type="varchar" MaxLength="30" />
+          <Property Name="modelo" Type="varchar" MaxLength="30" />
+          <Property Name="ckd" Type="varchar" MaxLength="30" />
+          <Property Name="linha" Type="varchar" MaxLength="30" />
+          <Property Name="data" Type="date" />
+          <Property Name="datahora" Type="datetime" />
+          <Property Name="filial" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="MODELO_EPL">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="modelo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="150" />
+          <Property Name="qtd_painel" Type="int" />
+          <Property Name="familia" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OP_EPL">
+          <Key>
+            <PropertyRef Name="ckd" />
+          </Key>
+          <Property Name="ckd" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="modelo_id_fk" Type="int" Nullable="false" />
+          <Property Name="status_op" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="data" Type="date" Nullable="false" />
+          <Property Name="data_hora" Type="datetime" Nullable="false" />
+          <Property Name="qtd" Type="int" Nullable="false" />
+          <Property Name="qtd_atual" Type="int" />
+          <Property Name="ordem" Type="varchar" MaxLength="150" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="filial" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'EPL.dbo.USERS_EPL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="USERS_EPL">
+          <Key>
+            <PropertyRef Name="matricula" />
+            <PropertyRef Name="nome" />
+            <PropertyRef Name="senha" />
+            <PropertyRef Name="setor" />
+            <PropertyRef Name="funcao" />
+          </Key>
+          <Property Name="matricula" Type="int" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="senha" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="setor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="funcao" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="status_user" Type="int" />
+          <Property Name="producao" Type="int" />
+          <Property Name="ckd" Type="int" />
+          <Property Name="caixote" Type="int" />
+          <Property Name="adm" Type="int" />
+        </EntityType>
+        <EntityContainer Name="EPLModel_AllStoreContainer">
+          <EntitySet Name="MODELO_EPL" EntityType="Self.MODELO_EPL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OP_EPL" EntityType="Self.OP_EPL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CAIXOTE_EPL" EntityType="Self.CAIXOTE_EPL" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CAIXOTE_EPL].[id] AS [id], 
+    [CAIXOTE_EPL].[id_pallet] AS [id_pallet], 
+    [CAIXOTE_EPL].[sn] AS [sn], 
+    [CAIXOTE_EPL].[modelo] AS [modelo], 
+    [CAIXOTE_EPL].[ckd] AS [ckd], 
+    [CAIXOTE_EPL].[linha] AS [linha], 
+    [CAIXOTE_EPL].[data] AS [data], 
+    [CAIXOTE_EPL].[datahora] AS [datahora], 
+    [CAIXOTE_EPL].[filial] AS [filial]
+    FROM [dbo].[CAIXOTE_EPL] AS [CAIXOTE_EPL]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="USERS_EPL" EntityType="Self.USERS_EPL" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [USERS_EPL].[matricula] AS [matricula], 
+    [USERS_EPL].[nome] AS [nome], 
+    [USERS_EPL].[senha] AS [senha], 
+    [USERS_EPL].[setor] AS [setor], 
+    [USERS_EPL].[funcao] AS [funcao], 
+    [USERS_EPL].[status_user] AS [status_user], 
+    [USERS_EPL].[producao] AS [producao], 
+    [USERS_EPL].[ckd] AS [ckd], 
+    [USERS_EPL].[caixote] AS [caixote], 
+    [USERS_EPL].[adm] AS [adm]
+    FROM [dbo].[USERS_EPL] AS [USERS_EPL]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EPLModel_All" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MODELO_EPL">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descricao" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="qtd_painel" Type="Int32" />
+          <Property Name="familia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="OP_EPL">
+          <Key>
+            <PropertyRef Name="ckd" />
+          </Key>
+          <Property Name="ckd" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="modelo_id_fk" Type="Int32" Nullable="false" />
+          <Property Name="status_op" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="data" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="data_hora" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="qtd" Type="Int32" Nullable="false" />
+          <Property Name="qtd_atual" Type="Int32" />
+          <Property Name="ordem" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="filial" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CAIXOTE_EPL">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="id_pallet" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id_pallet" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sn" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="modelo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ckd" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="linha" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="data" Type="DateTime" Precision="0" />
+          <Property Name="datahora" Type="DateTime" Precision="3" />
+          <Property Name="filial" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="USERS_EPL">
+          <Key>
+            <PropertyRef Name="matricula" />
+            <PropertyRef Name="nome" />
+            <PropertyRef Name="senha" />
+            <PropertyRef Name="setor" />
+            <PropertyRef Name="funcao" />
+          </Key>
+          <Property Name="matricula" Type="Int32" Nullable="false" />
+          <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="senha" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="setor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="funcao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status_user" Type="Int32" />
+          <Property Name="producao" Type="Int32" />
+          <Property Name="ckd" Type="Int32" />
+          <Property Name="caixote" Type="Int32" />
+          <Property Name="adm" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="EPLEntitiesModel_User" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MODELO_EPL" EntityType="Self.MODELO_EPL" />
+          <EntitySet Name="OP_EPL" EntityType="Self.OP_EPL" />
+          <EntitySet Name="CAIXOTE_EPL" EntityType="Self.CAIXOTE_EPL" />
+          <EntitySet Name="USERS_EPL" EntityType="Self.USERS_EPL" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EPLModel_AllStoreContainer" CdmEntityContainer="EPLEntitiesModel_User">
+          <EntitySetMapping Name="MODELO_EPL">
+            <EntityTypeMapping TypeName="EPLModel_All.MODELO_EPL">
+              <MappingFragment StoreEntitySet="MODELO_EPL">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="modelo" ColumnName="modelo" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+                <ScalarProperty Name="qtd_painel" ColumnName="qtd_painel" />
+                <ScalarProperty Name="familia" ColumnName="familia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OP_EPL">
+            <EntityTypeMapping TypeName="EPLModel_All.OP_EPL">
+              <MappingFragment StoreEntitySet="OP_EPL">
+                <ScalarProperty Name="ckd" ColumnName="ckd" />
+                <ScalarProperty Name="modelo_id_fk" ColumnName="modelo_id_fk" />
+                <ScalarProperty Name="status_op" ColumnName="status_op" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="data_hora" ColumnName="data_hora" />
+                <ScalarProperty Name="qtd" ColumnName="qtd" />
+                <ScalarProperty Name="qtd_atual" ColumnName="qtd_atual" />
+                <ScalarProperty Name="ordem" ColumnName="ordem" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="filial" ColumnName="filial" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CAIXOTE_EPL">
+            <EntityTypeMapping TypeName="EPLModel_All.CAIXOTE_EPL">
+              <MappingFragment StoreEntitySet="CAIXOTE_EPL">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_pallet" ColumnName="id_pallet" />
+                <ScalarProperty Name="sn" ColumnName="sn" />
+                <ScalarProperty Name="modelo" ColumnName="modelo" />
+                <ScalarProperty Name="ckd" ColumnName="ckd" />
+                <ScalarProperty Name="linha" ColumnName="linha" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="datahora" ColumnName="datahora" />
+                <ScalarProperty Name="filial" ColumnName="filial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERS_EPL">
+            <EntityTypeMapping TypeName="EPLModel_All.USERS_EPL">
+              <MappingFragment StoreEntitySet="USERS_EPL">
+                <ScalarProperty Name="adm" ColumnName="adm" />
+                <ScalarProperty Name="matricula" ColumnName="matricula" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+                <ScalarProperty Name="setor" ColumnName="setor" />
+                <ScalarProperty Name="funcao" ColumnName="funcao" />
+                <ScalarProperty Name="status_user" ColumnName="status_user" />
+                <ScalarProperty Name="producao" ColumnName="producao" />
+                <ScalarProperty Name="ckd" ColumnName="ckd" />
+                <ScalarProperty Name="caixote" ColumnName="caixote" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

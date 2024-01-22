@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{313F0FBD-8F4E-4A1C-9F92-F6FA0E4BE197}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LED_EPL</RootNamespace>
+    <AssemblyName>LED_EPL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>\\EXT-SFIS-DEV\PublishEpl\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://EXT-SFIS-DEV/EPL/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>EPL.html</WebPage>
+    <ApplicationRevision>34</ApplicationRevision>
+    <ApplicationVersion>1.0.2.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logoLedIco-removebg-preview-_1_.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>ADA210DD1561C110D66A82166E342C73F5C2E254</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>LED_EPL_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net48\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\CAIXOTE_EPL.cs">
+      <DependentUpon>ModelModelo_Users.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Conexao.cs" />
+    <Compile Include="Class\Cryptography.cs" />
+    <Compile Include="Class\Donwtime_R.cs" />
+    <Compile Include="Class\Global.cs" />
+    <Compile Include="Class\ModelModelo_Users.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelModelo_Users.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class\ModelModelo_Users.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelModelo_Users.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class\ModelModelo_Users.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelModelo_Users.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Class\MODELO_EPL.cs">
+      <DependentUpon>ModelModelo_Users.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class\OP_EPL.cs">
+      <DependentUpon>ModelModelo_Users.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class\USERS_EPL.cs">
+      <DependentUpon>ModelModelo_Users.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Chats\frmChartDia_Mes_Ano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Chats\frmChartDia_Mes_Ano.Designer.cs">
+      <DependentUpon>frmChartDia_Mes_Ano.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCaixote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCaixote.Designer.cs">
+      <DependentUpon>frmCaixote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Program.cs" />
+    <Compile Include="Forms\frmCKD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCKD.Designer.cs">
+      <DependentUpon>frmCKD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDowntime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDowntime.Designer.cs">
+      <DependentUpon>FrmDowntime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmGraficos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmGraficos.Designer.cs">
+      <DependentUpon>frmGraficos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmModelo.Designer.cs">
+      <DependentUpon>frmModelo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRelatorio.Designer.cs">
+      <DependentUpon>FrmRelatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSelectOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSelectOP.Designer.cs">
+      <DependentUpon>frmSelectOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Private\RJMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Private\RJMessageForm.Designer.cs">
+      <DependentUpon>RJMessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RJcontrols\Desing\ControlStyle.cs" />
+    <Compile Include="RJcontrols\Desing\ButtonDesign.cs" />
+    <Compile Include="RJcontrols\Desing\DropdownMenuColors.cs" />
+    <Compile Include="RJcontrols\Desing\DropdownMenuPosition.cs" />
+    <Compile Include="RJcontrols\Desing\DropdownMenuRenderer.cs" />
+    <Compile Include="RJcontrols\Desing\LabelStyle.cs" />
+    <Compile Include="RJcontrols\Desing\TextBoxStyle.cs" />
+    <Compile Include="RJcontrols\RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJcontrols\RJCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJcontrols\RJDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJcontrols\RJDatePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RJcontrols\RJDatePicker.Designer.cs">
+      <DependentUpon>RJDatePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RJcontrols\RJDragControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJcontrols\RJDropdownMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJcontrols\RJMenuIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJcontrols\RJMessageBox.cs" />
+    <Compile Include="RJcontrols\RJPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJcontrols\RJProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJcontrols\RJRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJcontrols\RJTextBox2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RJcontrols\RJTextBox2.Designer.cs">
+      <DependentUpon>RJTextBox2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RJcontrols\RJToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Settings\RJColors.cs" />
+    <Compile Include="Settings\SettingsManager.cs" />
+    <Compile Include="Settings\UIAppearance.cs" />
+    <Compile Include="Settings\UIAppearanceSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>UIAppearanceSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\UIStyle.cs" />
+    <Compile Include="Settings\UITheme.cs" />
+    <Compile Include="Utils\ColorEditor.cs" />
+    <Compile Include="Utils\RoundedControl.cs" />
+    <EmbeddedResource Include="Forms\Chats\frmChartDia_Mes_Ano.resx">
+      <DependentUpon>frmChartDia_Mes_Ano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCaixote.resx">
+      <DependentUpon>frmCaixote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCKD.resx">
+      <DependentUpon>frmCKD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDowntime.resx">
+      <DependentUpon>FrmDowntime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmGraficos.resx">
+      <DependentUpon>frmGraficos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmModelo.resx">
+      <DependentUpon>frmModelo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRelatorio.resx">
+      <DependentUpon>FrmRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSelectOP.resx">
+      <DependentUpon>frmSelectOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Private\RJMessageForm.resx">
+      <DependentUpon>RJMessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RJcontrols\RJDatePicker.resx">
+      <DependentUpon>RJDatePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RJcontrols\RJTextBox2.resx">
+      <DependentUpon>RJTextBox2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Class\ModelModelo_Users.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelModelo_Users.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Class\ModelModelo_Users.edmx.diagram">
+      <DependentUpon>ModelModelo_Users.edmx</DependentUpon>
+    </None>
+    <None Include="LED_EPL_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Settings\UIAppearanceSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>UIAppearanceSettings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoLedIco-removebg-preview %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Class\ModelModelo_Users.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelModelo_Users.Context.cs</LastGenOutput>
+      <DependentUpon>ModelModelo_Users.edmx</DependentUpon>
+    </Content>
+    <Content Include="Class\ModelModelo_Users.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelModelo_Users.edmx</DependentUpon>
+      <LastGenOutput>ModelModelo_Users.cs</LastGenOutput>
+    </Content>
+    <Content Include="logoLedIco-removebg-preview-_1_.ico" />
+    <None Include="Resources\logoLed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
