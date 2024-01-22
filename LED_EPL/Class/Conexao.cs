@@ -22,21 +22,21 @@ namespace LED_EPL.Class
             set { _filial = value; }
         }
 
-        private static string _ROTA = "Data Source = 192.168.108.16\\SQLEXPRESS; Initial Catalog = PCBA; Persist Security Info=True;User ID = crud; Password=2B2XWXMV";
+        private static string _ROTA = "";
         public static string ROTA
         {
             get { return _ROTA; }
             set { _ROTA = value; }
         }
 
-        private static string _SN = "Data Source = 192.168.108.16\\SQLEXPRESS; Initial Catalog = SN; Persist Security Info=True;User ID = crud; Password=2B2XWXMV";
+        private static string _SN = "";
         public static string SN
         {
             get { return _SN; }
             set { _SN = value; }
         }
 
-        private static string _API = "http://172.16.0.212:8086/REST/LST_OPLEDW?";
+        private static string _API = "";
         public static string API
         {
             get { return _API; }
@@ -50,7 +50,7 @@ namespace LED_EPL.Class
             set { _TypeScan = value; }
         }
 
-        private static string _PrintWay = "\\\\ext-av-01\\";
+        private static string _PrintWay = "";
         public static string PrintWay
         {
             get { return _PrintWay; }
